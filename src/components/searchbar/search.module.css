@@ -1,0 +1,29 @@
+input[type="text"] {
+    width: 30vw;
+    padding: .9rem;
+    padding-left: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #202020;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 3rem;
+}
+
+input[type="text"]:focus-visible {
+    border: 1.5px solid #5d22aa;
+    outline: none;
+    background-color: bisque;
+    transition: all ease 700ms;
+}
+input[type="text"]::placeholder {
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 412px) and (max-width: 812px) {
+    input[type="text"] {
+        width: 90vw;
+        padding: .7rem;
+        padding-left: .9rem;
+    }
+}
