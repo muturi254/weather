@@ -62,12 +62,105 @@ function App() {
     "cod": 200
   }
 
+  const forecast = {
+    "cod": "200",
+    "message": 0,
+    "cnt": 2,
+    "list": [
+      {
+        "dt": 1655078400,
+        "main": {
+          "temp": 289.55,
+          "feels_like": 289.52,
+          "temp_min": 287.95,
+          "temp_max": 289.55,
+          "pressure": 1018,
+          "sea_level": 1018,
+          "grnd_level": 837,
+          "humidity": 87,
+          "temp_kf": 1.6
+        },
+        "weather": [
+          {
+            "id": 802,
+            "main": "Clouds",
+            "description": "scattered clouds",
+            "icon": "03n"
+          }
+        ],
+        "clouds": {
+          "all": 46
+        },
+        "wind": {
+          "speed": 0.85,
+          "deg": 89,
+          "gust": 1.85
+        },
+        "visibility": 10000,
+        "pop": 0,
+        "sys": {
+          "pod": "n"
+        },
+        "dt_txt": "2022-06-13 00:00:00"
+      },
+      {
+        "dt": 1655089200,
+        "main": {
+          "temp": 288.02,
+          "feels_like": 287.94,
+          "temp_min": 286.85,
+          "temp_max": 288.02,
+          "pressure": 1017,
+          "sea_level": 1017,
+          "grnd_level": 837,
+          "humidity": 91,
+          "temp_kf": 1.17
+        },
+        "weather": [
+          {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04n"
+          }
+        ],
+        "clouds": {
+          "all": 74
+        },
+        "wind": {
+          "speed": 1,
+          "deg": 132,
+          "gust": 1.35
+        },
+        "visibility": 10000,
+        "pop": 0,
+        "sys": {
+          "pod": "n"
+        },
+        "dt_txt": "2022-06-13 03:00:00"
+      }
+    ],
+    "city": {
+      "id": 184745,
+      "name": "Nairobi",
+      "coord": {
+        "lat": -1.2833,
+        "lon": 36.8167
+      },
+      "country": "KE",
+      "population": 2750547,
+      "timezone": 10800,
+      "sunrise": 1655091084,
+      "sunset": 1655134454
+    }
+  }
+
   console.log(weatherData);
 
   return (
     <div className="App">
       <Search setTerm={handleTerm} />
-      <Display data={data} />
+      <Display data={data} forecast={forecast} />
     </div>
   );
 }

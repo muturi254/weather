@@ -3,9 +3,10 @@ import { WiHumidity, WiCelsius } from "react-icons/wi";
 import { GiWindsock } from "react-icons/gi";
 import { BsWind } from "react-icons/bs";
 import './Display.css'
+import ForeTab from "../foreTab/ForeTab";
 
 
-const Display = ({data}) => {
+const Display = ({data, forecast}) => {
 
     const weather = data.weather[0];
     
@@ -30,6 +31,11 @@ const Display = ({data}) => {
                             <p>{(data.main.temp - 273.15).toFixed(2)} <WiCelsius size={"1.8em"} values/></p>
                         </div>
                    </div>
+                </div>
+                <div className="forecast">
+                   <ForeTab />
+                   <ForeTab />
+                   <ForeTab />
                 </div>
             </div>
         </div>
