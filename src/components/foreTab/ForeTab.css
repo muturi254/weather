@@ -28,23 +28,28 @@
 
 .details-tab .address p:first-child{
     margin-bottom: .5rem;
+    text-transform: capitalize;
+}
+
+.details-tab .address p:last-child {
+    font-size: .9rem;
 }
 
 .tab p.description {
-    font-weight: 700;
+    font-weight: 600;
     text-transform: capitalize;
     margin-bottom: 1rem;
 }
 
 .tab p.temp {
-    font-size: 3.5rem;
+    font-size: 3.0rem;
 }
 
 .tab p.temp::after {
     content: "";
     border: 1px solid green;
     height: 10%;
-    margin-right: .8rem;
+    margin-right: .9rem;
 }
 
 .tab p.temp span {

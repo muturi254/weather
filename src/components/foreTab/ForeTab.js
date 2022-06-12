@@ -1,27 +1,31 @@
 import React from "react";
 import { WiCelsius } from "react-icons/wi";
 import { GrMap } from "react-icons/gr";
+import { BsClock } from "react-icons/bs";
 import './ForeTab.css';
 
 
-const ForeTab = () => {
+const ForeTab = ({data, country}) => {
 
-    
+    const weather = data.weather[0];
+    const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "sartaday"];
 
     return (
         <div className="tab">
             <div className="details">
-                <p className="description">Sunny Day</p>
+                <p className="description">{weather.description}</p>
                 <div className="details-tab">
-                    <p className="temp">21 <span> <WiCelsius size={"1em"} /> </span></p>
+                    <p className="temp">{(data.main.temp - 273.15).toFixed(2)} <span> <WiCelsius size={"1em"} /> </span></p>
                     <div className="address">
-                        <p>Mon 21 June</p>
-                        <p> <GrMap /> Nairobi</p>
+                        {/* <p>{days[new Date(data.dt_txt).getDay()]}</p> */}
+                        <p>{new Date(data.dt_txt).toDateString()}</p>
+                        <p style={{ marginBottom: ".4rem" }}> <BsClock /> {new Date(data.dt_txt).toLocaleTimeString()}</p>
+                        <p> <GrMap /> {country}</p>
                     </div>
                 </div>
                
             </div>
-            <img src={`http://openweathermap.org/img/wn/04d@4x.png`} alt="weather icon" />
+            <img src={`http://openweathermap.org/img/wn/${weather.icon}@4x.png`} alt="weather icon" />
         </div>
     )
 }

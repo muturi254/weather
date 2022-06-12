@@ -9,10 +9,12 @@ import ForeTab from "../foreTab/ForeTab";
 const Display = ({data, forecast}) => {
 
     const weather = data.weather[0];
+    const list = forecast.list;
+    // console.log(list);
     
 
 
-    console.log(weather);
+    // console.log(weather);
     return (
         <div className="wrapper">
             <h2>{data.name}</h2>
@@ -33,9 +35,7 @@ const Display = ({data, forecast}) => {
                    </div>
                 </div>
                 <div className="forecast">
-                   <ForeTab />
-                   <ForeTab />
-                   <ForeTab />
+                   {list.map((forecast, index) => <ForeTab data={forecast}  country={data.name} key={index} />)}
                 </div>
             </div>
         </div>
