@@ -10,7 +10,6 @@ const Display = ({data, forecast}) => {
 
     const weather = data.weather[0];
     const list = forecast.list;
-    // console.log(list);
     
 
 
@@ -35,7 +34,7 @@ const Display = ({data, forecast}) => {
                    </div>
                 </div>
                 <div className="forecast">
-                   {list.map((forecast, index) => <ForeTab data={forecast}  country={data.name} key={index} />)}
+                   {list.length > 0 && list.map((forecast, index) => <ForeTab data={forecast}  country={data.name} key={index} />)}
                 </div>
             </div>
         </div>

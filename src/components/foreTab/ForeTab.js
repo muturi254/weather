@@ -8,7 +8,6 @@ import './ForeTab.css';
 const ForeTab = ({data, country}) => {
 
     const weather = data.weather[0];
-    const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "sartaday"];
 
     return (
         <div className="tab">

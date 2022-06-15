@@ -12,7 +12,7 @@ function Search({setTerm}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="search" />
+            <input type="text" placeholder="Enter a city name ..." />
         </form>
     )
 }
